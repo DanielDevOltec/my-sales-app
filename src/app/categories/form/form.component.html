@@ -1,0 +1,39 @@
+<mat-card-content>
+  <form novalidate [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10">
+
+      <mat-form-field fxflex="30%">
+        <input matInput placeholder="Name" formControlName="name"/>
+        <mat-error *ngIf="categoryForm.get('name')?.hasError('required')">
+          the name is required.
+        </mat-error>
+
+        <mat-error *ngIf="categoryForm.get('name')?.hasError('minlength')">
+
+          the name is too short.
+
+        </mat-error>
+
+      </mat-form-field>
+
+      <mat-form-field fxFlex="70%">
+        <input matInput placeholder="Description" formControlName="description" />
+
+      </mat-form-field>
+
+      <button type="button" mat-button color="primary" (click)="onBack()">
+        Back
+      </button>
+      <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!categoryForm.valid">
+      Save
+      </button>
+    </div>
+
+
+  </form>
+</mat-card-content>
