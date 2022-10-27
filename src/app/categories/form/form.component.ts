@@ -17,6 +17,7 @@ export class FormComponent implements OnInit {
 
   @Input() loading: boolean = false;
 
+
   constructor() { }
 
   ngOnInit(): void {

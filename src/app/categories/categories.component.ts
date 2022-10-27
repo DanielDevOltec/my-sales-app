@@ -65,14 +65,16 @@ export class CategoriesComponent implements OnInit {
   }
 
   onSave(event : Category){
-
+  
     this.showLoading = true;
 
     this.categoryService.save(event).subscribe(response => {
       console.log("category was saved");
       this.showForm = false;
       this.refreshData();
+      
       this.showLoading = false;
+
     });
   }
 
