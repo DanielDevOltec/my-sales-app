@@ -25,11 +25,14 @@
       <button type="button" mat-button color="primary" (click)="onBack()">
         Back
       </button>
+
+
       <button
       mat-raised-button
       color="primary"
       type="submit"
-      [disabled]="!categoryForm.valid">
+      [disabled]="!categoryForm.valid|| loading"
+      [class.spinner]="loading">
       Save
       </button>
     </div>

@@ -15,6 +15,8 @@ export class FormComponent implements OnInit {
 
   @Output() save = new EventEmitter<Category>();
 
+  @Input() loading: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
