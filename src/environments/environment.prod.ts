@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api:"https://example.com/api"
+  api: "https://northwind.vercel.app/api/"
 };
