@@ -29,6 +29,8 @@ export class CategoriesComponent implements OnInit {
 
   category!: Category;
 
+  showLoading : boolean = false;
+
   constructor(private categoryService: CategoryService) {
 
   }
@@ -49,19 +51,30 @@ export class CategoriesComponent implements OnInit {
   }
 
   refreshData() : void{
+
+    this.showLoading = true;
+
     this.categoryService.getAll().subscribe(categories => {
       this.dataSource = new MatTableDataSource(categories);
       this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;
-      this.table.dataSource = this.dataSource;
+
+      this.showLoading = false;
+
     });
   }
 
   onSave(event : Category){
+  
+    this.showLoading = true;
+
     this.categoryService.save(event).subscribe(response => {
       console.log("category was saved");
       this.showForm = false;
       this.refreshData();
+      
+      this.showLoading = false;
+
     });
   }
 
