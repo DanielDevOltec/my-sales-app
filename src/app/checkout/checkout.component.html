@@ -1,0 +1,34 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Checkout</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-list role="list">
+      <mat-list-item role="listitem" *ngFor="let item of items">
+
+        {{item.quantity}} <pre>    </pre> {{item.name}}
+        <span class="spacer"></span>
+        {{item.unitPrice | currency}}
+        &nbsp;
+        <button mat-button (click)="onRemoveItem(item)">
+
+          <mat-icon>
+            remove
+          </mat-icon>
+
+        </button>
+
+      </mat-list-item>
+
+    </mat-list>
+    <br>
+
+    Total: {{cartService.total | currency}}
+
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary">Next</button>
+  </mat-card-actions>
+</mat-card>

@@ -20,6 +20,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatBadgeModule } from '@angular/material/badge';
 import { HttpClientModule } from '@angular/common/http';
 import { FormComponent } from './categories/form/form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -29,6 +30,16 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { LoadingBarComponent } from './loading-bar.component';
 import { CategoriesLoadingAsyncComponent } from './categories/categories-loading-async/categories-loading-async.component';
+import { SuppliersComponent } from './suppliers/suppliers.component';
+import { SuppliersListComponent } from './suppliers/suppliers-list/suppliers-list.component';
+import { SuppliersEditComponent } from './suppliers/suppliers-edit/suppliers-edit.component';
+import { SuppliersNewComponent } from './suppliers/suppliers-new/suppliers-new.component';
+import { SuppliersFormComponent } from './suppliers/suppliers-form/suppliers-form.component';
+import { SuppliersDeleteComponent } from './suppliers/suppliers-delete/suppliers-delete.component';
+import { SuppliersShowComponent } from './suppliers/suppliers-show/suppliers-show.component';
+import { ProductsComponent } from './products/products.component';
+import { ProductsListComponent } from './products/products-list/products-list.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +50,17 @@ import { CategoriesLoadingAsyncComponent } from './categories/categories-loading
     DashboardComponent,
     FormComponent,
     LoadingBarComponent,
-    CategoriesLoadingAsyncComponent
+    CategoriesLoadingAsyncComponent,
+    SuppliersComponent,
+    SuppliersListComponent,
+    SuppliersEditComponent,
+    SuppliersNewComponent,
+    SuppliersFormComponent,
+    SuppliersDeleteComponent,
+    SuppliersShowComponent,
+    ProductsComponent,
+    ProductsListComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +84,8 @@ import { CategoriesLoadingAsyncComponent } from './categories/categories-loading
     MatFormFieldModule,
     MatInputModule,
     FlexLayoutModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
